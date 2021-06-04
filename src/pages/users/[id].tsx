@@ -1,13 +1,15 @@
+/* eslint-disable @typescript-eslint/require-await */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { GetStaticProps, GetStaticPaths } from 'next'
 
 import { User } from '../../interfaces'
-import { sampleUserData } from '../../utils/sample-data'
+import { sampleUserData } from '../../../utils/sample-data'
 import Layout from '../../components/Layout'
 import ListDetail from '../../components/ListDetail'
 
 type Props = {
-  item?: User
-  errors?: string
+  item: User
+  errors: string
 }
 
 const StaticPropsDetail = ({ item, errors }: Props) => {
@@ -52,10 +54,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const id = params?.id
     const item = sampleUserData.find((data) => data.id === Number(id))
+
     // By returning { props: item }, the StaticPropsDetail component
     // will receive `item` as a prop at build time
     return { props: { item } }
   } catch (err) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     return { props: { errors: err.message } }
   }
 }

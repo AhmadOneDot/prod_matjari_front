@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
 
 import { User } from '../../interfaces'
-import { sampleUserData } from '../../utils/sample-data'
+import { sampleUserData } from '../../../utils/sample-data'
 import Layout from '../../components/Layout'
 import List from '../../components/List'
 
@@ -10,7 +11,7 @@ type Props = {
   items: User[]
 }
 
-const WithStaticProps = ({ items }: Props) => (
+const WithStaticProps = ({ items }: Props): JSX.Element => (
   <Layout title="Users List | Next.js + TypeScript Example">
     <h1>Users List</h1>
     <p>
@@ -31,6 +32,7 @@ export const getStaticProps: GetStaticProps = async () => {
   // Don't forget to include the respective types for any props passed into
   // the component.
   const items: User[] = sampleUserData
+
   return { props: { items } }
 }
 
