@@ -1,5 +1,5 @@
 /* TODO:: included fonts in specific file */
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500&family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,12 +12,35 @@ h3,
 h4,
 h5,
 h6 {
-	@apply font-sans-latin-heading-en;
+  @apply font-sans-latin-heading-en;
 }
 
 /* OVERRIDES DAISY STYLES */
-.btn {
-	height: 2.5rem;
-	min-height: 2.5rem;
-	@apply font-medium;
+.btn:not(.btn-circle):not(.btn-lg) {
+  height: 2.5rem;
+  min-height: 2.5rem;
+  @apply font-medium;
+  @apply capitalize;
+}
+
+.btn-lg {
+  @apply text-base;
+  @apply h-12;
+  @apply min-h-12;
+}
+
+/* Feater Icon stroke width override */
+.feather {
+  stroke-width: 2.5px;
+}
+
+.feather-x,
+.feather-arrow-right,
+.feather-arrow-left,
+.feather-chevron-down,
+.feather-chevron-right,
+.feather-chevron-left,
+.feather-bar-chart-2,
+.feather-play {
+  stroke-width: 3px;
 }
