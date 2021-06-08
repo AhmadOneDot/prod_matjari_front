@@ -44,3 +44,39 @@ h6 {
 .feather-play {
   stroke-width: 3px;
 }
+
+/* Scroll bar */
+.inb-scrollbar::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+.inb-scrollbar::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+.mt-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-primary;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+.mt-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-base-100;
+}
+.mt-scrollbar::-webkit-scrollbar-thumb:active {
+  @apply bg-neutral-focus;
+}
+.mt-scrollbar::-webkit-scrollbar-track {
+  @apply bg-primary;
+  @apply bg-opacity-25;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  @apply bg-base-300;
+}
+.mt-scrollbar::-webkit-scrollbar-track:active {
+  @apply bg-neutral;
+}
+.mt-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}

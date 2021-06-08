@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import clsx from 'clsx'
 import Link from 'next/link'
 import { Grid, Aperture, ChevronDown, ChevronLeft } from 'react-feather'
@@ -5,14 +6,14 @@ import { useUI } from '../../../../../components/ui/context'
 
 export const SubSidebar = (): JSX.Element => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const { displaySubSidebar } = useUI()
+  const { displaySubSidebar, closeSubSidebar } = useUI()
 
   return (
-    <aside className={clsx("mto-sub-sidebar  bg-primary bg-opacity-10 h-full", displaySubSidebar ? 'visible w-80' : 'hidden w-0')}>
+    <aside className={clsx("mto-sub-sidebar bg-primary bg-opacity-10 h-full inb-scrollbar overflow-y-auto", displaySubSidebar ? 'visible w-64' : 'hidden w-0')}>
       <div className="flex flex-col px-6 text-gray-500 capitalize text-sm font-semibold">
         <div className="flex h-24 items-center space-x-8">
           <div>
-            <button type="button" className="btn btn-sm btn-outline btn-circle border-blue-200">
+            <button type="button" className="btn btn-sm btn-outline btn-circle border-blue-200" onClick={closeSubSidebar}>
               <ChevronLeft size="18" className="feather-chevron-left text-gray-500" />
             </button>
           </div>
